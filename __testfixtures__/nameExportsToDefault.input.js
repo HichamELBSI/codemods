@@ -4,4 +4,4 @@ export const logFunction = b => {
 
 export const addNumbers = (a, b) => {
     return a + b;
-}
+};
