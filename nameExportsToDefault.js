@@ -39,13 +39,28 @@ module.exports = function (file, api) {
     exportedProperties[i].shorthand = true;
   }
 
-  const defaultExport = j.exportDefaultDeclaration(
-    j.objectExpression(exportedProperties)
-  );
+  // Check if there's already an exportDefaultDeclaration
+  const defaultDeclaration = root.find(j.ExportDefaultDeclaration);
+  if (defaultDeclaration.size()) {
+    defaultDeclaration.replaceWith(p => {
+      const value = p.value;
+      value.declaration.properties = [
+        ...value.declaration.properties,
+        ...exportedProperties,
+      ];
+      return value;
+    })
+  } else {
+    const defaultExport = j.exportDefaultDeclaration(
+      j.objectExpression(exportedProperties)
+    );
 
-  // This work. But it's obviously ugly
-  root.nodes()[0].program.body.push(defaultExport);
+    // This work. But it's obviously ugly
+    root.nodes()[0].program.body.push(defaultExport);
+  }
 
   return root
-    .toSource();
+    .toSource({
+      trailingComma: true,
+    });
 };

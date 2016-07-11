@@ -8,5 +8,5 @@ const addNumbers = (a, b) => {
 
 export default {
     logFunction,
-    addNumbers
+    addNumbers,
 };
