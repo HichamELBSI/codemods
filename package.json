@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "nameExportsToDefault.js",
-  "dependencies": {},
+  "dependencies": {
+    "eslint": "^3.12.2"
+  },
   "devDependencies": {
     "babel-jest": "^13.0.0",
     "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
-    "jest-cli": "^13.0.0",
+    "jest-cli": "^18.0.0",
     "jscodeshift": "^0.3.25"
   },
   "scripts": {
