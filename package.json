@@ -14,7 +14,8 @@
     "jscodeshift": "^0.3.25"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:dev": "jest --watch"
   },
   "repository": {
     "type": "git",

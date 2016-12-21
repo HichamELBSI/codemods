@@ -1,8 +1,7 @@
 require('style.scss');
 
-import R from 'ramda';
-
 import cx from 'classnames';
+import R from 'ramda';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
