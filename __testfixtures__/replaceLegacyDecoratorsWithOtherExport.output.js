@@ -10,7 +10,3 @@ export default class DecoratedClass extends Component {
         return <div />;
     }
 }
-
-export default {
-    stuff: '1',
-};
